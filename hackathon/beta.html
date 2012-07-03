@@ -1,0 +1,123 @@
+<doctype html>
+<html lang=de>
+<script type="text/javascript" src=myjs.js> </script>
+<link rel="stylesheet" href="mycss.css" />
+<body>
+<header>
+	<hgroup id="myHeader">
+		<h1>&Uuml;berschrift</h1>
+		<h2 id="subtitle">subtitle</h2>
+	</hgroup>
+</header>
+	<nav>
+		<ul id="Navigation">
+		    <li><button type="button" name="" value="" onClick="showContent('canvas')">canvas</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('keygen')">keygen</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('calculateContent')">Berechnungen</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('prozess')">Prozess</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('detailSummary')">Detail Summary</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('datalist')">Datalist</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('meter')">Meter</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('onlineStatus')">Online Status</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('position')">Position</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('localStorage')">LocalStorage</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('video')">Video</button></li>
+		    <li><button type="button" name="" value="" onClick="showContent('audio')">Audio</button></li>
+			<li><button type="button" name="" value="" onClick="showContent('dragAndDrop')">Drag & drop</button></li>
+		  </ul>
+	</nav>
+	
+	<section id="canvas">
+		<canvas id="canvasElement" widht="200" height="200"></canvas>
+	</section>
+	
+	<section id="calculateContent">
+		<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+			<input type="range" name="a" value="50" />100
+			+<input type="number" name="b" value="50" />
+			=<output name="x" for="a b"></output>
+		</form>
+	</section>
+
+	<section id="prozess">
+		<input type="button" onClick="startProgress()" name="Start" value="Start"/>
+		<progress name="a" id="bar" value="0" max="100"></progress>
+		<output name="x" id="theOutput"></output>
+	</section>
+
+	<section id="detailSummary">
+		<details>
+			<summary><mark>click her!</mark></summary> are the details
+		</details>
+	</section>
+
+	<section id="keygen">
+		<form action="demo_keygen.asp" method="get">
+			Username: 
+				<input type="text" name="usr_name" />
+			Encryption: 
+				<keygen name="security" />
+			 <input type="submit" />
+		</form>
+	</section>
+
+	<section id="datalist">
+		<input list="browsers" />
+			<datalist id="browsers">
+			  <option value="Internet Explorer">
+			  <option value="Firefox">
+			  <option value="Chrome">
+			  <option value="Opera">
+			  <option value="Safari">
+			</datalist>
+	</section>
+
+	<section id="meter">
+		<meter min="0" max="100" value="25"></meter>
+	</section>
+
+	<section id="onlineStatus">
+  		<p>Current network status: <span id="status">checking...</span></p>
+  		<button type="button" name="" value="" onClick="online()">Check</button>
+	</section>
+
+	<section id="position">
+		<div id="showPosition">keine Position ermittelt</div>
+		<button type="button" name="" value="" onClick="getUserPosition()">Position</button>
+  		
+	</section>
+
+	<section id="localStorage">
+  		<button type="button" name="" value="" onClick="clearLocalStorage()">Clear</button>
+	</section>
+
+	<section id="video">
+		  <video id="myMovie" width="640" height="360" >
+		    <source src="videos/test.mp4" >
+		  </video>
+		  <nav>
+		    <div id="buttons" >
+		      <button type="button" id="playButton">Play</button>
+		    </div>
+		    <div id="defaultBar" >
+		      <div id="progressBar" ></div>
+		    </div>
+		    <div style="clear:both" ></div>
+		  </nav>
+  		
+	</section>
+	<section id="audio">
+		  <audio id="myMovie" controls >
+		    <source src="audio/test.mp3" >
+		  </audio>		
+	</section>
+	<section id="dragAndDrop">
+		<p>Schieben sie das Bild in das Rechteck</p>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br />
+		<img id="drag1" src="testbild.png" draggable="true" ondragstart="drag(event)" width="400" height="400" />
+	</section>
+</body>
+</html>
+
+
